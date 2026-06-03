@@ -90,6 +90,7 @@ class GameState:
         if defender.hp < 0:
             defender.hp = 0
         print(f"{defender.name} erleidet {damage} Schaden!\n")
+        game.switch_turn()
 
 
     def __str__(self):
@@ -103,7 +104,6 @@ if __name__ == "__main__":
     game = GameState(bisasam, schiggy)  ### placeholder hardcoded monster
     print(game)
     game.do_attack(vinewhip)
-    game.switch_turn()
     print(game)
     game.do_attack(tackle)
     print(game)
