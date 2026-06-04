@@ -1,5 +1,4 @@
 from monster import Monster
-from buttonpress import text_and_wait_for_enter
 
 class GameState:
     def __init__(self, player_monster: Monster, cpu_monster: Monster):
@@ -21,7 +20,6 @@ class GameState:
         """turnover und anzeige aktueller Spieler"""
         self.active_player = "Cpu" if self.active_player == "Player" else "Player"
         print(f"{self.get_active_monster()} ist am Zug!\n")
-        text_and_wait_for_enter()
 
     def __str__(self):
         return (f"-----------------------------------\n"
