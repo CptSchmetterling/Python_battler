@@ -2,7 +2,7 @@ import random
 from buttonpress import text_and_wait_for_enter, auswahl_loop
 from gamestate import GameState
 from monsters import get_monsterlist
-from attack import do_attack
+from battle import do_attack
 
 
 
