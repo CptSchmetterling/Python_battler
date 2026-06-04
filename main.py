@@ -2,7 +2,7 @@ import random
 from buttonpress import text_and_wait_for_enter, auswahl_loop
 from gamestate import GameState
 from monsters import get_monsterlist
-from battle import do_attack
+from battle import do_attack, check_is_hit
 
 
 
@@ -49,7 +49,7 @@ def battle_loop(game: GameState):
 
         do_attack(attack, game)
 
-    print("\n===========ENDE===========")
+    print("\n===========KAMPF VORBEI===========")
     if game.player_monster.is_alive():
         print(f"{game.player_monster.name} WINS")
     else:
@@ -59,15 +59,14 @@ def battle_loop(game: GameState):
 def main():
     # Startet Menü
     menu()
-    # lädt Monsterkiste
+
     monsterlist = get_monsterlist()
     # Monsterauswahl
     players_monster = auswahl_monster(monsterlist, "Player")
     # Auswahl zufälliges CPU
-    cpus_monster = random.choice([m for m in monsterlist])
-    print(f"\nCPU wählt: {cpus_monster.name}!\n")
-
+    cpus_monster = random.choice(monsterlist)
     game = GameState(players_monster, cpus_monster)
+    print(f"\nCPU wählt: {cpus_monster.name}!\n")
     battle_loop(game)
 
 

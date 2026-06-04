@@ -9,3 +9,6 @@ moves.py       -> Verfügbare Attackenliste
 monsters.py    -> get_monsterlist() mit allen Monstern  
 main.py        -> Spielschleife, Menü, Auswahl  
 buttonpress.py -> Hilfsfunktion ()
+
+
+anstatt Monsterdaten als tuple und erst wenn generate in main, instance erstellen

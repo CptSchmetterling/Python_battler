@@ -1,8 +1,11 @@
 class Attack:
-    def __init__(self, name: str, power: int, type: str):
+    def __init__(self, name: str, power: int, type: str, pp: int, accuracy: int=100):
         self.name = name
         self.power = power
         self.type = type.lower()
+        self.pp = pp
+        self.accuracy = accuracy
+
 
     def typenvorteil(self,target_type: str)-> float:
         """Gibt den Typenmultiplier zurück
